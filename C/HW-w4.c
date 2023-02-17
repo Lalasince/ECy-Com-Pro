@@ -412,47 +412,47 @@
 
 
 
-#include<stdio.h>
-int main()
-{
-    int p[4];
-    int g[4];
-    float GPA;
-    printf("Please enter Mathematic score: ");
-    scanf("%d",&p[0]);
-    printf("Please enter English score: ");
-    scanf("%d",&p[1]);
-    printf("Please enter Science score: ");
-    scanf("%d",&p[2]);
-    printf("Please enter Art score: ");
-    scanf("%d",&p[3]);
+// #include<stdio.h>
+// int main()
+// {
+//     int p[4];
+//     int g[4];
+//     float GPA;
+//     printf("Please enter Mathematic score: ");
+//     scanf("%d",&p[0]);
+//     printf("Please enter English score: ");
+//     scanf("%d",&p[1]);
+//     printf("Please enter Science score: ");
+//     scanf("%d",&p[2]);
+//     printf("Please enter Art score: ");
+//     scanf("%d",&p[3]);
 
-for(int i=0;i<4;i++)
-{
-    if(p[i]>=81 && p[i]<=100)
-    {
-        g[i]=4;
-    }
-    else if(p[i]>=71 && p[i]<=80)
-    {
-        g[i]=3;
-    }
-    else if(p[i]>=61 && p[i]<=70)
-    {
-        g[i]=2;
-    }
-    else if(p[i]>=51 && p[i]<=60)
-    {
-        g[i]=1;
-    }
-    else if(p[i]>=0 && p[i]<=50)
-    {
-        g[i]=0;
-    }
-}
-    GPA=((g[0]*3.0)+(g[1]*3.0)+(g[2]*3.0)+(g[3]*2.0))/11.0;
-    printf("GPA = %.2f",GPA);
-}
+// for(int i=0;i<4;i++)
+// {
+//     if(p[i]>=81 && p[i]<=100)
+//     {
+//         g[i]=4;
+//     }
+//     else if(p[i]>=71 && p[i]<=80)
+//     {
+//         g[i]=3;
+//     }
+//     else if(p[i]>=61 && p[i]<=70)
+//     {
+//         g[i]=2;
+//     }
+//     else if(p[i]>=51 && p[i]<=60)
+//     {
+//         g[i]=1;
+//     }
+//     else if(p[i]>=0 && p[i]<=50)
+//     {
+//         g[i]=0;
+//     }
+// }
+//     GPA=((g[0]*3.0)+(g[1]*3.0)+(g[2]*3.0)+(g[3]*2.0))/11.0;
+//     printf("GPA = %.2f",GPA);
+// }
 
 
 
