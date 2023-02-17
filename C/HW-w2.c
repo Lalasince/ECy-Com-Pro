@@ -48,30 +48,30 @@
 
  //5.
 
- //#include<stdio.h>
- //int main ()
- //{
- //    int inp=20599;
- //    int y=(inp/365);
- //    int m=(inp%365)/30;
- //    int d=(inp%365)-(m*30);
- //    printf("Jack Ma has been living in this world for %d years, %d months,and %d days.",y,m,d);
- //    return(0);
- //}
+ #include<stdio.h>
+ int main ()
+ {
+    int inp=20599;
+    int y=(inp/365);
+    int m=(inp%365)/30;
+    int d=(inp%365)-(m*30);
+    printf("Jack Ma has been living in this world for %d years, %d months,and %d days.",y,m,d);
+    return(0);
+ }
 
 
  //6.
 
- //#include <stdio.h>
- //int main()
- //{
- //    int inp=973;
- //    int hund=(inp/100);
- //    int fif=(inp-(hund*100))/50;
- //    int twe=(inp-(hund*100)-(fif*50))/20;
- //    int ten=(inp-(hund*100)-(fif*50)-(twe*20))/10;
- //    int fiv=(inp-(hund*100)-(fif*50)-(twe*20)-(ten*10))/5;
- //    int one=(inp-(hund*100)-(fif*50)-(twe*20)-(ten*10)-(fiv*5));
- //    printf("%d one hundred Baht banknotes, %d fifty Baht banknotes, %d twenty Baht banknotes, \n %d ten Baht coins, %d five Baht coins, and %d one Baht coins needed to be returned.",hund,fif,twe,ten,fiv,one);
- //    return (0);
- //}
+//  #include <stdio.h>
+//  int main()
+//  {
+//     int inp=973;
+//     int hund=(inp/100);
+//     int fif=(inp-(hund*100))/50;
+//     int twe=(inp-(hund*100)-(fif*50))/20;
+//     int ten=(inp-(hund*100)-(fif*50)-(twe*20))/10;
+//     int fiv=(inp-(hund*100)-(fif*50)-(twe*20)-(ten*10))/5;
+//     int one=(inp-(hund*100)-(fif*50)-(twe*20)-(ten*10)-(fiv*5));
+//     printf("%d one hundred Baht banknotes, %d fifty Baht banknotes, %d twenty Baht banknotes, \n %d ten Baht coins, %d five Baht coins, and %d one Baht coins needed to be returned.",hund,fif,twe,ten,fiv,one);
+//     return (0);
+//  }
