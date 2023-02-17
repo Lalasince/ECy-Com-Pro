@@ -52,44 +52,44 @@
 
 // 2.
 
-// #include<stdio.h>
-// int main()
-// {
-//     int Nos;
-//     printf("Please enter a number: ");
-//     scanf("%d",&Nos);
-
-//     if((Nos%2)==0)
-//     {
-//         if(Nos>0)
-//         {
-//             printf("%d is positive even number.",Nos);
-//         }
-//         else if(Nos<0)
-//         {
-//             printf("%d is negative even number.",Nos);
-//         }
-//         else
-//         {
-//             printf("%d is zero number.",Nos);
-//         }
-//     }
-//     else
-//     {
-//         if(Nos>0)
-//         {
-//             printf("%d is positive odd number.",Nos);
-//         }
-//         else if(Nos<0)
-//         {
-//             printf("%d is negative odd number.",Nos);
-//         }
-//         else
-//         {
-//             printf("%d is zero number.",Nos);
-//         }
-//     }
-// }
+#include<stdio.h>
+int main()
+{
+    int Nos;
+    printf("Please enter a number: ");
+    scanf("%d",&Nos);
+    if((Nos%2)==0)
+    {
+        if(Nos>0)
+        {
+            printf("%d is positive even number.",Nos);
+        }
+        else if(Nos<0)
+        {
+            printf("%d is negative even number.",Nos);
+        }
+        else
+        {
+            printf("%d is zero number.",Nos);
+        }
+    }
+    else
+    {
+        if(Nos>0)
+        {
+            printf("%d is positive odd number.",Nos);
+        }
+        else if(Nos<0)
+        {
+            printf("%d is negative odd number.",Nos);
+        }
+        else
+        {
+            printf("%d is zero number.",Nos);
+        }
+    }
+    return 0;
+}
 
 
 
@@ -107,7 +107,7 @@
 // 3.
 
 // #include<stdio.h>
-// int main()
+// void main()
 // {
 //     int Nos,res;
 //     char oo;
@@ -138,8 +138,8 @@
 // }
 
 // #include <stdio.h>
-
-// int main() {
+// main() 
+// {
 //     char operation;
 //     double n1, n2;
 
@@ -571,6 +571,7 @@
 // }
 
 // 10.
+
 //  #include"stdio.h"
 //  #include"math.h"
 //  void main()
