@@ -19,7 +19,10 @@
 //     {
 //         printf("%d is zero number.",Nos);
 //     }
+//     return 0;
 // }
+
+/*อันล่างเป็นฟังก์ชัน if แบบสั้นนะครับ*/
 
 // #include<stdio.h>
 // int main()
@@ -52,44 +55,44 @@
 
 // 2.
 
-#include<stdio.h>
-int main()
-{
-    int Nos;
-    printf("Please enter a number: ");
-    scanf("%d",&Nos);
-    if((Nos%2)==0)
-    {
-        if(Nos>0)
-        {
-            printf("%d is positive even number.",Nos);
-        }
-        else if(Nos<0)
-        {
-            printf("%d is negative even number.",Nos);
-        }
-        else
-        {
-            printf("%d is zero number.",Nos);
-        }
-    }
-    else
-    {
-        if(Nos>0)
-        {
-            printf("%d is positive odd number.",Nos);
-        }
-        else if(Nos<0)
-        {
-            printf("%d is negative odd number.",Nos);
-        }
-        else
-        {
-            printf("%d is zero number.",Nos);
-        }
-    }
-    return 0;
-}
+// #include<stdio.h>
+// int main()
+// {
+//     int Nos;
+//     printf("Please enter a number: ");
+//     scanf("%d",&Nos);
+//     if((Nos%2)==0)
+//     {
+//         if(Nos>0)
+//         {
+//             printf("%d is positive even number.",Nos);
+//         }
+//         else if(Nos<0)
+//         {
+//             printf("%d is negative even number.",Nos);
+//         }
+//         else
+//         {
+//             printf("%d is zero number.",Nos);
+//         }
+//     }
+//     else
+//     {
+//         if(Nos>0)
+//         {
+//             printf("%d is positive odd number.",Nos);
+//         }
+//         else if(Nos<0)
+//         {
+//             printf("%d is negative odd number.",Nos);
+//         }
+//         else
+//         {
+//             printf("%d is zero number.",Nos);
+//         }
+//     }
+//     return 0;
+// }
 
 
 
@@ -107,7 +110,7 @@ int main()
 // 3.
 
 // #include<stdio.h>
-// void main()
+// int main()
 // {
 //     int Nos,res;
 //     char oo;
@@ -135,10 +138,11 @@ int main()
 //     {
 //         printf("%d / %d = %d",Nos,res,Nos/res);
 //     }
+//     return 0;
 // }
 
 // #include <stdio.h>
-// main() 
+// int main() 
 // {
 //     char operation;
 //     double n1, n2;
@@ -196,6 +200,8 @@ int main()
 
 // 4.
 
+/*ข้อนี้คิดไม่ออกเลยใช้ฟังก์ชัน loop for*/
+
 // #include<stdio.h>
 // int main()
 // {
@@ -237,6 +243,7 @@ int main()
 // }
 //     printf("Maximum number in A is %d\n",max);
 //     printf("Minimum number in A is %d",min);
+// return 0;
 // }
 
 
@@ -291,6 +298,7 @@ int main()
 //     {
 //         printf("Matrix A is not an identity matrix.");
 //     }
+//     return 0;
 // }
 
 
@@ -410,7 +418,7 @@ int main()
 //     printf("GPA = %.2f",GPA);
 // }
 
-
+/*โค้ดอันล่างเป็นการใช้ loop for มาช่วย*/
 
 // #include<stdio.h>
 // int main()
@@ -452,10 +460,11 @@ int main()
 // }
 //     GPA=((g[0]*3.0)+(g[1]*3.0)+(g[2]*3.0)+(g[3]*2.0))/11.0;
 //     printf("GPA = %.2f",GPA);
+//     return 0;
 // }
 
 
-
+/*อันนี้ไม่เกี่ยวเอามาเป้นตัวอย่างฟังกชัน switch เฉยๆ*/
 
 // #include<stdio.h>
 // int main()
@@ -494,7 +503,7 @@ int main()
 // 7.
 
 // #include<stdio.h>
-// void main()
+// int main()
 // {
 //     char ch;
 //     printf("Please enter alphabet: ");
@@ -513,6 +522,7 @@ int main()
 //         case 'U' : printf("%c is a Vowel",ch);break;
 //         default : printf("%c is an alphabet",ch);break;
 //     }
+//     return 0;
 // }
 
 
@@ -551,7 +561,16 @@ int main()
 //                 }break;
 //         case 1 : printf("%d is positive number.",Nos);break;
 //     }
+//     return 0;
 // }
+
+
+
+
+
+
+
+
 
 // 9.
 
@@ -568,13 +587,23 @@ int main()
 //         case 0 : printf("%d > %d",Nos[0],Nos[1]);break;
 //         case 1 : printf("%d < %d",Nos[0],Nos[1]);break;
 //     }
+//     return 0;
 // }
+
+
+
+
+
+
+
+
+
 
 // 10.
 
 //  #include"stdio.h"
 //  #include"math.h"
-//  void main()
+//  int main()
 //  {
 //      int a,b,c;
 //      float x[2]={};
@@ -585,4 +614,5 @@ int main()
 //          case 0 :  printf("x is undefined");break;
 //          case 1 :  x[0]=(-b+sqrt(4*a*c))/(2*a); x[1]=(-b-sqrt(4*a*c))/(2*a); printf("x is %f,%f",x[0],x[1]); break;
 //      }
+//      return 0;
 //  }
