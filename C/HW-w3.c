@@ -63,39 +63,38 @@
 
 
 // 4.
-// #include<stdio.h>
-// int main()
-// {
-//     char name[3][2][50];
-//     char str[40];
+#include<stdio.h>
+int main()
+{
+    char name[3][2][50];
+    char str[40];
 
-//     printf("First Student Name: ");
-//     fgets(str, 40, stdin);
-//     sscanf(str, "%s",&name[0][0]);
+    printf("First Student Name: ");
+    fgets(str, 40, stdin);
+    sscanf(str, "%s",&name[0][0]);
 
-//     printf("Family name: ");
-//     fgets(str, 40, stdin);
-//     sscanf(str, "%s",&name[0][1]);
+    printf("Family name: ");
+    fgets(str, 40, stdin);
+    sscanf(str, "%s",&name[0][1]);
 
-//     printf("Second Student Name: ");
-//     fgets(str, 40, stdin);
-//     sscanf(str, "%s",&name[1][0]);
+    printf("Second Student Name: ");
+    fgets(str, 40, stdin);
+    sscanf(str, "%s",&name[1][0]);
 
-//     printf("Family name: ");
-//     fgets(str, 40, stdin);
-//     sscanf(str, "%s",&name[1][1]);
+    printf("Family name: ");
+    fgets(str, 40, stdin);
+    sscanf(str, "%[^\n]s",&name[1][1]);
 
-//     printf("Third Student Name: ");
-//     fgets(str, 40, stdin);
-//     sscanf(str, "%s",&name[2][0]);
+    printf("Third Student Name: ");
+    fgets(str, 40, stdin);
+    sscanf(str, "%s",&name[2][0]);
 
-//     printf("Family name: ");
-//     fgets(str, 40, stdin);
-//     sscanf(str, "%s",&name[2][1]);
+    printf("Family name: ");
+    fgets(str, 40, stdin);
+    sscanf(str, "%[^\n]s",&name[2][1]);
 
-
-//     printf("our classroom has three students \n1. %[^\n]%*s %[^\n]%*s\n2. %[^\n]%*s %[^\n]%*s\n3. %[^\n]%*s %[^\n]%*s\n",name[0][0],name[0][1],name[1][0],name[1][1],name[2][0],name[2][1]);
-// }
+    printf("our classroom has three students \n1. %s %s\n2. %s %s\n3. %s %s\n",name[0][0],name[0][1],name[1][0],name[1][1],name[2][0],name[2][1]);
+}
 
 
 
