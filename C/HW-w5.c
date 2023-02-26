@@ -169,21 +169,55 @@
 
 /*-----------------------------------------------------------------------------------------------*/
 
-
 // #include <stdio.h>
-// int main()
-// {
-//     int i,count=0;
-//     char Sen[100],max[100];
+// #include <string.h>
+
+// int main() {
+//     char sentence[100];
+//     char longest_word[100] = "", current_word[100] = "";
+//     int i, max_length = 0, curr_length = 0;
 //     printf("Please enter a sentence: ");
-//     scanf("%[^\n]s",&Sen);
-//     for(i=0; i< sizeof(Sen); i++)
-//     {
-//         if(Sen[i] >= max[0]){
-//             max[0] = Sen[i];
+//     scanf("%[^\n]s", sentence);
+
+//     for (i = 0; sentence[i] != '\0'; i++) {
+//         if ((sentence[i] >= 'a' && sentence[i] <= 'z') ||
+//             (sentence[i] >= 'A' && sentence[i] <= 'Z') ) {
+//             current_word[curr_length] = sentence[i];
+//             curr_length++;
+//         } else {
+//             if (curr_length > max_length) {
+//                 max_length = curr_length;
+//                 current_word[curr_length] = '\0';
+//                 strcpy(longest_word, current_word);
+//             }
+//             curr_length = 0;
+//             memset(current_word, 0, sizeof(current_word));
 //         }
 //     }
-//     printf("%d",max);
+
+//     printf("The longest word is: %s  [ %d character(s)]\n", longest_word,max_length);
+// }
+
+// #include <stdio.h>
+
+// int main() {
+//     char sentence[100];
+//     int i, max_length = 0, curr_length = 0;
+//     printf("Enter a sentence: ");
+//     scanf("%[^\n]s", &sentence);
+
+//     for (i = 0; sentence[i] != '\0'; i++) {
+//         if ((sentence[i] >= 'a' && sentence[i] <= 'z') ||
+//             (sentence[i] >= 'A' && sentence[i] <= 'Z')) {
+//             curr_length++;
+//         } else {
+//             if (curr_length > max_length) {
+//                 max_length = curr_length;
+//             }
+//             curr_length = 0;
+//         }
+//     }
+//     printf(" %d \n",max_length);
 // }
 
 
@@ -191,43 +225,39 @@
 
 
 // #include <stdio.h>
+// int gcd(int a, int b) {
+//     int temp;
+//     while (b != 0) {
+//         temp = a % b;
+//         a = b;
+//         b = temp;
+//     }
+//     return a;
+// }
+
+// int lcm(int a, int b) {
+//     return (a * b) / gcd(a, b);
+// }
+
 // int main()
 // {
-//     int num[5] = {};
-//     scanf("%d %d %d %d %d",num[0],num[1],num[2],num[3],num[4]);
-
+//     int n[5],results_gcd,results_lcm;
+//     printf("Enter integers: ");
+//     scanf("%d %d %d %d %d",&n[0],&n[1],&n[2],&n[3],&n[4]);
+    
+//     results_gcd = n[0];
+//     results_lcm = n[0];
+  
+//     for (int i = 1; i < 5; i++) {
+//         results_gcd = gcd(results_gcd, n[i]);
+//         results_lcm = lcm(results_lcm, n[i]);
+//     }
+  
+//       printf("GCD = %d\n",results_gcd);
+//       printf("LCM = %d\n",results_lcm);
+  
+//     return 0;
 // }
 
 
-#include <stdio.h>
-#include <stdlib.h>
-int main()
-{
-   int a, b, gcd=1, lcm;
-// ตัวแปร a, b ใช้รับค่าจำนวนที่ต้องการหาค่า
-// ตัวแปร gcd ใช้เก็บค่า หรม. , lcm ใช้เก็บค่า ครน.
-// gcd กำหนดค่าเริ่มต้นเป็น 1 เพราะเป็นตัวแปรที่เกี่ยวข้องกับการ
-// คูณหรือหาร
 
-   printf("Please input first number : ");
-   scanf("%d", &a);
-   printf("Please input second number : ");
-   scanf("%d", &b);
-
-   int x = abs(a), y = abs(b);
-// จากตัวอย่าง มีการใส่ค่าติดลบ  จึงต้องใช้ฟังก์ชัน Absolute 
-// เพื่อเปลี่ยนค่าติดลบให้เป็นค่าบวก
-   
-   while(y != 0)
-   {
-       int t = y;
-       y = x%y;
-       x = t;
-   }
-   gcd = x;
-   lcm = (a*b) / gcd; // สูตรการหา ครน. เมื่อได้ หรม.แล้ว
-
-   printf("\nThe greatest common divisor is %d\n",abs(gcd));
-   printf("The least common multiple is %d",abs(lcm));
-    return 0;
-}
