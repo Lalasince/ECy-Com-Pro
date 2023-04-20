@@ -1,0 +1,173 @@
+#include <SPI.h>
+const int CS_PIN   = 10;    // SPI /SS
+const int CLK_PIN  = 13;  // SPI SCK
+const int DIN_PIN  = 11;  // SPI MOSI
+
+void MAX7219_write_reg( uint8_t addr, uint8_t data ) {
+  digitalWrite( CS_PIN, LOW );
+  SPI.transfer( addr );
+  SPI.transfer( data );
+  digitalWrite( CS_PIN, HIGH );
+}
+
+#define REG_DIGIT(x)      (0x1+(x))
+#define REG_DECODE_MODE   (0x9)
+#define REG_INTENSITY     (0xA)
+#define REG_SCAN_LIMIT    (0xB)
+#define REG_SHUTDOWN      (0xC)
+#define REG_DISPLAY_TEST  (0xF)
+
+void MAX7219_init(void) {
+  MAX7219_write_reg( REG_DECODE_MODE, 0x00 );  // decode mode: no decode for digits 0-7
+  MAX7219_write_reg( REG_INTENSITY, 0x07 );    // set intensity: 0x07=15/32
+  MAX7219_write_reg( REG_SCAN_LIMIT, 0x07 );   // scan limit: display digits 0-7   สั่งแถว
+  MAX7219_write_reg( REG_SHUTDOWN, 0x01 );     // shutdown: normal operation
+  MAX7219_write_reg( REG_DISPLAY_TEST, 0x00 ); // display test: no display test
+}
+
+void setup() {
+  SPI.begin();
+  SPI.setBitOrder( MSBFIRST );
+  SPI.setClockDivider( SPI_CLOCK_DIV16 );// 16MHz/16 -> 1MHz SCK frequency
+  SPI.setDataMode( SPI_MODE0 ); // use SPI mode 0
+  pinMode( CS_PIN, OUTPUT );
+  digitalWrite( CS_PIN, HIGH );
+  MAX7219_init();
+}
+
+void test_mode() {
+  MAX7219_write_reg( REG_SHUTDOWN, 0x01 );     // normal operation
+  MAX7219_write_reg( REG_DISPLAY_TEST, 0x01 ); // enter display test mode
+  delay(100);
+  MAX7219_write_reg( REG_DISPLAY_TEST, 0x00 ); // exit display test mode
+  MAX7219_write_reg( REG_SHUTDOWN, 0x00 );     // shutdown operation
+  delay(900);
+}
+
+const byte char_data[][8] = { // 'สามเหลี่ยม',S,y,n,j,e,e,r,0,2,0,5 }
+  {  
+    B10000000, //สามเหลี่ยม
+    B11000000,
+    B10100000,
+    B10010000,
+    B10001000,
+    B10000100,
+    B10000010,
+    B11111111
+  },
+  { B00111111, //S
+    B01100000,
+    B11000000,
+    B11111110,
+    B01111111,
+    B00000110,
+    B00001100,
+    B11111000
+  },
+  { B10000010, //y
+    B11000110,
+    B11000110,
+    B11000110,
+    B00111110,
+    B00000110,
+    B01111110,
+    B00111100
+  },
+  { B11000000, //n
+    B11111110,
+    B11111110,
+    B11000110,
+    B11000110,
+    B11000110,
+    B11000110,
+    B11000110
+  },
+  { B00000110, //j
+    B00000000,
+    B00001110,
+    B00000110,
+    B00000110,
+    B01100110,
+    B01111110,
+    B00111100
+  },
+  { B00111100, //e
+    B01111110,
+    B11000011,
+    B11111110,
+    B11111100,
+    B11000000,
+    B01111110,
+    B00111100
+  },
+  { B11000011, //e contrast
+    B10000001,
+    B00111100,
+    B00000001,
+    B00000011,
+    B00111111,
+    B10000001,
+    B11000011
+  },
+  { B01000000, //r
+    B01101110,
+    B01111110,
+    B01110010,
+    B01100000,
+    B01100000,
+    B01100000,
+    B01100000
+  },
+  { B01111110, //0
+    B11111111,
+    B11000011,
+    B11000011,
+    B11000011,
+    B11000011,
+    B11111111,
+    B01111110
+  },
+  { B00111100, //2
+    B01111110,
+    B01100110,
+    B00001110,
+    B00011000,
+    B00110000,
+    B01111110,
+    B01111110
+  },
+  { B00000000, //0
+    B00111100,
+    B01100010,
+    B01010010,
+    B01001010,
+    B01000110,
+    B00111100,
+    B00000000
+  },
+  { B01111110, //5
+    B01111110,
+    B01100000,
+    B01111110,
+    B01111110,
+    B00000110,
+    B01111110,
+    B01111110
+  }
+};
+
+
+
+void loop() {
+  // test_mode();
+  MAX7219_write_reg( REG_SHUTDOWN, 0x01 );     // normal operation
+  while (1) {
+    static uint8_t ch = 0;
+    for (uint8_t i = 0; i < 8; i++) {
+      MAX7219_write_reg( REG_DIGIT(i), char_data[ch][i] );
+    }
+    ch++;
+    if (ch > 11) ch = 0; //จำกัดจำนวนข้อมูลของอาเรย์ที่จะนำมาใช้แสดงผล
+    delay(1000);
+  }
+}
